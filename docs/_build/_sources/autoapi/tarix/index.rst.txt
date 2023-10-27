@@ -1,0 +1,152 @@
+:py:mod:`tarix`
+===============
+
+.. py:module:: tarix
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   date/index.rst
+   dateutil/index.rst
+
+
+Package Contents
+----------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   tarix.Date
+   tarix.dateutil
+
+
+
+
+.. py:class:: Date(date_str: str)
+
+
+   .. raw:: html
+
+       <div dir="rtl">
+       رشته‌یِ تاریخِ جلالی رو به فرمتِ تاریخ جلالی و میلادی درمیاره.
+       </div>
+
+   Parameter
+   ---------
+   date_str: str, format "yyyymmdd", "yyyy-mm-dd", "yyyy/mm/dd"
+       تاریخِ جلالی
+
+   .. py:property:: date_str
+
+
+   .. py:method:: from_str()
+
+      .. raw:: html
+
+          <div dir="rtl">
+            رشته‌یِ تاریخِ جلالی رو به فرمتِ تاریخ جلالی درمیاره.
+          </div>
+
+      :rtype: jdatetime.date
+
+      .. rubric:: Examples
+
+      >>> from tarix import Date
+      >>> Date("1402-08-05").from_str()
+      jdatetime.date(1402, 8, 5)
+
+
+   .. py:method:: jalali_to_gregorian()
+
+      .. raw:: html
+
+          <div dir="rtl">
+            تاریخِ جلالی رو به میلادی تبدیل می‌کنه.
+          </div>
+
+      :rtype: datetime.date
+
+      .. rubric:: Examples
+
+      >>> from tarix import Date
+      >>> Date("1402-08-05").jalali_to_gregorian()
+      datetime.date(2023, 10, 27)
+
+
+
+.. py:class:: dateutil
+
+
+   .. py:method:: days_between(end: str, start: str | None = None)
+      :classmethod:
+
+      .. raw:: html
+
+          <div dir="rtl">
+           تعداد روزهایِ بین تاریخ جلالیِ ابتدا و انتها رو محاسبه می‌کنه.
+          </div>
+
+      .. note::
+          .. raw:: html
+
+              <div dir="rtl">
+              اگه تاریخِ ابتدا داده نشه، پیش-فرض
+              <span style="color:#831843">امروزه</span>
+               .
+              </div>
+
+      :param end: تاریخِ انتها
+      :type end: str , format "yyyymmdd", "yyyy-mm-dd", "yyyy/mm/dd"
+      :param start: تاریخِ ابتدا
+      :type start: str , format "yyyymmdd", "yyyy-mm-dd", "yyyy/mm/dd"
+
+      :rtype: int
+
+      .. rubric:: Examples
+
+      >>> from tarix import dateutil
+      >>> dateutil.days_between(end='1402-08-06', start='1402-05-25')
+      73
+
+
+   .. py:method:: count_evenly_periods(length: int, end: str, start: str | None = None)
+      :classmethod:
+
+      .. raw:: html
+
+          <div dir="rtl">
+               تعداد‌ِ دوره‌هایِ length-ماهه و باقیمانده-بر حسبِ length * 30- رو بهت می‌ده.
+          </div>
+
+      .. note::
+          .. raw:: html
+
+              <div dir="rtl">
+              اگه تاریخِ ابتدا داده نشه، پیش-فرض
+              <span style="color:#831843">امروزه</span>
+               .
+              </div>
+
+      :param length: تعدادِ ماه
+      :type length: int , > 0
+      :param end: تاریخِ انتها
+      :type end: str , format "yyyymmdd", "yyyy-mm-dd", "yyyy/mm/dd"
+      :param start: تاریخِ ابتدا
+      :type start: str , format "yyyymmdd", "yyyy-mm-dd", "yyyy/mm/dd"
+
+      :rtype: (int, float)
+
+      .. rubric:: Examples
+
+      >>> from tarix import dateutil
+      >>> dateutil.count_evenly_periods(length=8, end='1373-05-25', start='1402-05-25')
+      (43, 0.5083333333333333)
+
+
+

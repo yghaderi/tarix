@@ -1,0 +1,62 @@
+:py:mod:`tarix.main`
+====================
+
+.. py:module:: tarix.main
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   tarix.main.Tarix
+
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   tarix.main.translate_dastr
+
+
+
+.. py:function:: translate_dastr(dtstr: str)
+
+
+.. py:class:: Tarix(date_str: str)
+
+
+   .. py:property:: date_str
+
+
+   .. py:method:: from_str()
+
+      .. raw:: html
+
+          <div dir="rtl">
+            رشته‌یِ تاریخِ جلالی رو به فرمتِ تاریخ جلالی درمیاره.
+          </div>
+
+      :rtype: jdatetime.date
+
+
+   .. py:method:: jalali_to_gregorian()
+
+      .. raw:: html
+
+          <div dir="rtl">
+            تاریخِ جلالی رو به میلادی تبدیل می‌کنه.
+          </div>
+
+      :param jdate: تاریخِ جلالی
+      :type jdate: str , %Y-%m-%d or %Y/%m/%d
+
+      :rtype: datetime.date
+
+
+

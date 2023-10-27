@@ -1,0 +1,8 @@
+.venv/
+.*/
+dist/
+
+.pytest_cache/
+
+*.pyc
+*.pyo

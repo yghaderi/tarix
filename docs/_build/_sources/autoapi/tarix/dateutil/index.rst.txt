@@ -1,0 +1,89 @@
+:py:mod:`tarix.dateutil`
+========================
+
+.. py:module:: tarix.dateutil
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   tarix.dateutil.dateutil
+
+
+
+
+.. py:class:: dateutil
+
+
+   .. py:method:: days_between(end: str, start: str | None = None)
+      :classmethod:
+
+      .. raw:: html
+
+          <div dir="rtl">
+           تعداد روزهایِ بین تاریخ جلالیِ ابتدا و انتها رو محاسبه می‌کنه.
+          </div>
+
+      .. note::
+          .. raw:: html
+
+              <div dir="rtl">
+              اگه تاریخِ ابتدا داده نشه، پیش-فرض
+              <span style="color:#831843">امروزه</span>
+               .
+              </div>
+
+      :param end: تاریخِ انتها
+      :type end: str , format "yyyymmdd", "yyyy-mm-dd", "yyyy/mm/dd"
+      :param start: تاریخِ ابتدا
+      :type start: str , format "yyyymmdd", "yyyy-mm-dd", "yyyy/mm/dd"
+
+      :rtype: int
+
+      .. rubric:: Examples
+
+      >>> from tarix import dateutil
+      >>> dateutil.days_between(end='1402-08-06', start='1402-05-25')
+      73
+
+
+   .. py:method:: count_evenly_periods(length: int, end: str, start: str | None = None)
+      :classmethod:
+
+      .. raw:: html
+
+          <div dir="rtl">
+               تعداد‌ِ دوره‌هایِ length-ماهه و باقیمانده-بر حسبِ length * 30- رو بهت می‌ده.
+          </div>
+
+      .. note::
+          .. raw:: html
+
+              <div dir="rtl">
+              اگه تاریخِ ابتدا داده نشه، پیش-فرض
+              <span style="color:#831843">امروزه</span>
+               .
+              </div>
+
+      :param length: تعدادِ ماه
+      :type length: int , > 0
+      :param end: تاریخِ انتها
+      :type end: str , format "yyyymmdd", "yyyy-mm-dd", "yyyy/mm/dd"
+      :param start: تاریخِ ابتدا
+      :type start: str , format "yyyymmdd", "yyyy-mm-dd", "yyyy/mm/dd"
+
+      :rtype: (int, float)
+
+      .. rubric:: Examples
+
+      >>> from tarix import dateutil
+      >>> dateutil.count_evenly_periods(length=8, end='1373-05-25', start='1402-05-25')
+      (43, 0.5083333333333333)
+
+
+
