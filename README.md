@@ -1,7 +1,6 @@
 ## metafid
 ### tarix
 
-[![CI - Test](https://github.com/yghaderi/tarix/actions/workflows/tarix.yml/badge.svg)](https://github.com/yghaderi/tarix/actions/workflows/tarix.yml)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/tarix)
 ![PyPI - Version](https://img.shields.io/pypi/v/tarix)
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/tarix?logoColor=blue&color=blue)
