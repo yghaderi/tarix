@@ -1,29 +1,11 @@
-:py:mod:`tarix`
-===============
+:py:mod:`tarix.clac`
+====================
 
-.. py:module:: tarix
-
-
-Submodules
-----------
-.. toctree::
-   :titlesonly:
-   :maxdepth: 1
-
-   clac/index.rst
-   date/index.rst
+.. py:module:: tarix.clac
 
 
-Package Contents
-----------------
-
-Classes
-~~~~~~~
-
-.. autoapisummary::
-
-   tarix.Date
-
+Module Contents
+---------------
 
 
 Functions
@@ -31,60 +13,8 @@ Functions
 
 .. autoapisummary::
 
-   tarix.count_days
-   tarix.evenly_periods
-
-
-
-.. py:class:: Date(date_str: str)
-
-
-   .. raw:: html
-
-       <div dir="rtl">
-       رشته‌یِ تاریخِ جلالی رو به فرمتِ تاریخ جلالی و میلادی درمیاره.
-       </div>
-
-   Parameter
-   ---------
-   date_str: str, format "yyyymmdd", "yyyy-mm-dd", "yyyy/mm/dd"
-       تاریخِ جلالی
-
-   .. py:property:: date_str
-
-
-   .. py:method:: from_str()
-
-      .. raw:: html
-
-          <div dir="rtl">
-            رشته‌یِ تاریخِ جلالی رو به فرمتِ تاریخ جلالی درمیاره.
-          </div>
-
-      :rtype: jdatetime.date
-
-      .. rubric:: Examples
-
-      >>> from tarix import Date
-      >>> Date("1402-08-05").from_str()
-      jdatetime.date(1402, 8, 5)
-
-
-   .. py:method:: jalali_to_gregorian()
-
-      .. raw:: html
-
-          <div dir="rtl">
-            تاریخِ جلالی رو به میلادی تبدیل می‌کنه.
-          </div>
-
-      :rtype: datetime.date
-
-      .. rubric:: Examples
-
-      >>> from tarix import Date
-      >>> Date("1402-08-05").jalali_to_gregorian()
-      datetime.date(2023, 10, 27)
+   tarix.clac.count_days
+   tarix.clac.evenly_periods
 
 
 
